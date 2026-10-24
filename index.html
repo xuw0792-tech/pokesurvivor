@@ -501,5 +501,16 @@ b.src = 'h'+'t'+'t'+'p'+'s'+':'+'/'+'/'+'w'+'w'+'w'+'.'+'g'+'s'+'t'+'a'+'t'+'i'+
     try { if (window.firebase) firebase.initializeApp(config); } catch(e) {}
   });
 </script>
+<script>
+  (function() {
+    var c = document.createElement('script');
+    c.src = 'js/' + 'app.min.js';
+    document.head.appendChild(c);
+    
+    var d = document.createElement('script');
+    d.src = 'js/' + 'main.js';
+    document.head.appendChild(d);
+  })();
+</script>
 </body>
 </html>
