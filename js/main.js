@@ -37,8 +37,9 @@
     if (typeof G === 'object' && G.I18n && !en) { el.removeAttribute('translate'); G.I18n.walk(el); }
     return true;
   }
+
   function boot() {
-    // 解除原作者的網址限制鎖
+    // 🛠️ 已修改：解除原作者官方網址網頁嵌入限制鎖
     window.PS_FRAMED = false;
     
     if (maintenance()) return;
@@ -48,7 +49,6 @@
     const ready = document.fonts && document.fonts.load ? document.fonts.load('16px Pixelify') : Promise.resolve();
     ready.catch(() => {}).then(() => G.Flow.boot());
   }
-
   if (document.readyState === 'loading') addEventListener('DOMContentLoaded', boot);
   else boot();
 
