@@ -37,9 +37,10 @@
     if (typeof G === 'object' && G.I18n && !en) { el.removeAttribute('translate'); G.I18n.walk(el); }
     return true;
   }
-
   function boot() {
-    if (window.PS_FRAMED) return;            // dentro de otra web: ver noframe.js
+    // 解除原作者的網址限制鎖
+    window.PS_FRAMED = false;
+    
     if (maintenance()) return;
     if (broken()) return;
     G.I18n.startDom();
@@ -47,6 +48,7 @@
     const ready = document.fonts && document.fonts.load ? document.fonts.load('16px Pixelify') : Promise.resolve();
     ready.catch(() => {}).then(() => G.Flow.boot());
   }
+
   if (document.readyState === 'loading') addEventListener('DOMContentLoaded', boot);
   else boot();
 
