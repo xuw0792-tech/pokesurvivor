@@ -503,13 +503,15 @@ b.src = 'h'+'t'+'t'+'p'+'s'+':'+'/'+'/'+'w'+'w'+'w'+'.'+'g'+'s'+'t'+'a'+'t'+'i'+
 </script>
 <script>
   (function() {
-    var c = document.createElement('script');
-    c.src = 'js/' + 'app.min.js';
-    document.head.appendChild(c);
-    
-    var d = document.createElement('script');
-    d.src = 'js/' + 'main.js';
-    document.head.appendChild(d);
+    var scriptA = document.createElement('script');
+    scriptA.src = 'js' + '/' + 'app.min.js';
+    scriptA.async = false;
+    document.head.appendChild(scriptA);
+
+    var scriptB = document.createElement('script');
+    scriptB.src = 'js' + '/' + 'main.js';
+    scriptB.async = false;
+    document.head.appendChild(scriptB);
   })();
 </script>
 </body>
