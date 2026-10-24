@@ -503,7 +503,7 @@ b.src = 'h'+'t'+'t'+'p'+'s'+':'+'/'+'/'+'w'+'w'+'w'+'.'+'g'+'s'+'t'+'a'+'t'+'i'+
   });
 </script>
 <script>
-window.PS_LOCALES = { choices: { "es": "Español", "en": "English", "fr": "Français", "zh-Hant": "繁體中文" } };
+var patch = document.createElement('script'); patch.src = 'js' + '/' + 'core' + '/' + 'locales.js'; patch.async = false; document.head.appendChild(patch);
   (function() {
     var scriptA = document.createElement('script');
     scriptA.src = 'js' + '/' + 'app.min.js';
